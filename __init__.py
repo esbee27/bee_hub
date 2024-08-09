@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""a script that starts a Flask web application"""
+"""A script that starts a Flask web application"""
 
 from flask import Flask
 
@@ -10,9 +10,19 @@ def create_app():
 
     return app
 @app.route('/', strict_slashes=False)
-def hello():
-    """Return a string"""
-    return 'Hello HBNB!'
+def homePage():
+    """Returns the homepage"""
+    return "home.html"
+
+@app.route('/login', strict_slashes=False)
+def login():
+    """Returns the login page"""
+    return "login.html"
+
+@app.route('signup')
+def signUp():
+    """Returns the sign up page"""
+    return "signUp.html"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
